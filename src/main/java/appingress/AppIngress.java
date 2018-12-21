@@ -230,7 +230,6 @@ public class AppIngress extends Application {
 					window.close();
 				}
 	});
-		
 		resultLabel.setTextFill(Color.GREEN);
 		resultLabel.setPrefSize(240, 240);
 		resultVbox = initVbox();
