@@ -1,0 +1,100 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>aws.lambda</groupId>
+  <artifactId>AppingressFX</artifactId>
+  <version>0.1.1</version>
+  <name>AWS Application ingress</name>
+  
+  
+    <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.0</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+        </configuration>
+        </plugin>
+    </plugins>
+  </build>
+  
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>software.amazon.awssdk</groupId>
+        <artifactId>bom</artifactId>
+        <version>2.1.1</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+	<dependency>
+    <groupId>software.amazon.awssdk</groupId>
+    <artifactId>elasticloadbalancingv2</artifactId>
+  </dependency>
+  
+  	<dependency>
+    <groupId>software.amazon.awssdk</groupId>
+    <artifactId>acm</artifactId>
+  </dependency> 
+  
+   	<dependency>
+    <groupId>software.amazon.awssdk</groupId>
+    <artifactId>ec2</artifactId>
+  </dependency> 
+  
+  <dependency>
+    <groupId>software.amazon.awssdk</groupId>
+    <artifactId>config</artifactId>
+  </dependency> 
+  
+  <dependency>
+  	<groupId>com.amazonaws</groupId>
+  	<artifactId>aws-lambda-java-core</artifactId>
+  	<version>1.1.0</version>
+  </dependency>
+ 
+  
+<dependency>
+  <groupId>org.apache.logging.log4j</groupId>
+  <artifactId>log4j-core</artifactId>
+  <version>2.11.1</version>
+  <scope>compile</scope>
+</dependency>
+<dependency>
+  <groupId>org.apache.logging.log4j</groupId>
+  <artifactId>log4j-api</artifactId>
+    <version>2.11.1</version>
+  <scope>compile</scope>
+</dependency>
+<dependency>
+  <groupId>org.apache.logging.log4j</groupId>
+  <artifactId>log4j-slf4j-impl</artifactId>
+    <version>2.11.1</version>
+  <scope>compile</scope>
+</dependency>
+
+  </dependencies>
+</project>
